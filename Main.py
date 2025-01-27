@@ -10,41 +10,6 @@ app = ctk.CTk()
 app.geometry("1280x720")
 app.title("WhiteArchTech")
 
-menubar = Menu(app)
-app.config(menu=menubar)
-
-file_menu = Menu(menubar, tearoff=0)
-
-file_menu.add_command(label='Login')
-file_menu.add_command(label='Return')
-file_menu.add_command(label='Close Page') #Adding the command to close the page only not the main
-file_menu.add_separator()
-
-#Adding the files and pages
-
-file_menu.add_command(
-    label='Exit',
-    command=app.destroy
-)
-
-menubar.add_cascade(
-    label="Menu",
-    menu=file_menu
-)
-
-help_menu = Menu(
-    menubar,
-    tearoff=0
-)
-
-help_menu.add_command(label='Welcome')
-help_menu.add_command(label='About...')
-
-menubar.add_cascade(
-    label='Help',
-    menu=help_menu
-)
-
 class BoxFrame(ctk.CTkFrame):
     def __init__(self, master, title, size):
         super().__init__(master)

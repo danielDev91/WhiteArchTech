@@ -1,3 +1,4 @@
+#This is a test for login interface for python this app doesnt requires login its total privacy.
 import customtkinter as ctk
 import tkinter.messagebox as tkmb
 
