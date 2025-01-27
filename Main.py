@@ -38,10 +38,10 @@ app.grid_columnconfigure(0, weight=1)
 frame = BoxFrame(app, title="Annoucement", size=450)
 frame.grid(row=1, column=0, padx=20, pady=20)
 
-def open_scan():
-    subprocess.Popen(["python", "Scan.py"])
+def open_hash_generator():
+    subprocess.Popen(["python", "hashgenerator.py"])
 
-open_scan_button = ctk.CTkButton(app, text="Open Scanner", command=open_scan)
+open_scan_button = ctk.CTkButton(app, text="Generator Hash", command=open_hash_generator)
 open_scan_button.grid(row=2, column=0, padx=20, pady=20, sticky="ew")
 
 app.mainloop()
