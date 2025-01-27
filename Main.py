@@ -1,6 +1,6 @@
 import customtkinter as ctk
 import tkinter.messagebox as tkmb
-from tkinter import Menu
+import subprocess
 
 ctk.set_appearance_mode("dark")
 
@@ -29,7 +29,7 @@ class BoxFrame(ctk.CTkFrame):
         news_label = ctk.CTkLabel(self.news_container, text=news_text, fg_color="gray20", corner_radius=6)
         news_label.grid(row=self.news_container.grid_size()[1], column=0, padx=10, pady=(5, 5), sticky="ew")
 
-welcome_label = ctk.CTkLabel(app, text="Welcome to WhiteArchTech!\nThis application is base on CyberWhiteArch. \nIt's  totally privacy-focused and open-source virus and hash scanner.", fg_color="transparent", bg_color='transparent', corner_radius=6)
+welcome_label = ctk.CTkLabel(app, text="Welcome to WhiteArchTech!\nThis application is base on CyberWhiteArch. \nIt's totally privacy-focused and open-source virus and hash scanner.", fg_color="transparent", bg_color='transparent', corner_radius=6)
 welcome_label.grid(row=0, column=0, padx=20, pady=20, sticky="nsew")
 welcome_label.configure(font=("Helvetica", 20, "bold"))
 app.grid_rowconfigure(0, weight=1)
@@ -37,5 +37,11 @@ app.grid_columnconfigure(0, weight=1)
 
 frame = BoxFrame(app, title="Annoucement", size=450)
 frame.grid(row=1, column=0, padx=20, pady=20)
+
+def open_scan():
+    subprocess.Popen(["python", "Scan.py"])
+
+open_scan_button = ctk.CTkButton(app, text="Open Scanner", command=open_scan)
+open_scan_button.grid(row=2, column=0, padx=20, pady=20, sticky="ew")
 
 app.mainloop()
