@@ -9,7 +9,7 @@ ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
 # Your VirusTotal API key
-API_KEY = "bef642f35acead3bb6e6d7cc97e0baa7eead6d13400c7c61b4b874e06ac02dc8"
+API_KEY = "key"
 
 def scan_file(file_path):
     url = 'https://www.virustotal.com/vtapi/v2/file/scan'
