@@ -3,7 +3,8 @@ from tkinter import filedialog
 import requests
 import os
 import time
-from PIL import Image, ImageTk
+import PIL
+from PIL import Image
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
@@ -42,16 +43,8 @@ def open_scan_page():
     scan_app.grid_columnconfigure(1, weight=1)
     scan_app.grid_columnconfigure(2, weight=1)
 
-    # Load the image
-    image_path = "C:\Users\sajin\Documents\Projects\Python\WhieArchTech\assets\images\VirusTotal.jpg"
-    image = Image.open(image_path)
-    image = image.resize((100, 100), Image.ANTIALIAS)
-    image_tk = ImageTk.PhotoImage(image)
-
-    image_label = ctk.CTkLabel(scan_app, image=image_tk)
-    image_label.image = image_tk
-    image_label.grid(row=0, column=0, columnspan=2, padx=10, pady=10, sticky="nw")
-
+    # Load image
+    
     file_label = ctk.CTkLabel(scan_app, text="Choose a file to scan", font=("Helvetica", 18, "bold"))
     file_label.grid(row=0, column=0, columnspan=3, padx=10, pady=10, sticky="n")
 
